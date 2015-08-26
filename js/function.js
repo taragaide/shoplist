@@ -43,10 +43,9 @@ function getInput() {
 
 function addItem(message) {
   $(".cross").hide(); // hiding the delete icon
-  var checkbox = "<td class=\"check\">" + "<input type=\"checkbox\" id=\"item" + id + "\" class=\"box\">" + "<label for=\"item" + id + "\" class=\"check-label\"></label></td>";
+  var checkbox = "<td class=\"check\">" + "<input type=\"checkbox\" id=\"item" + "\" class=\"box\">" + "<label for=\"item" + "\" class=\"check-label\"></label></td>";
   var content = "<td class=\"content\"><span>" + message + "</span></td>";
   var delIcon = "<td><img src=\"img/cross.png\" alt=\"cross\" class=\"cross\"></td>";
 
   $("tbody").append("<tr>" + checkbox + content + delIcon + "</tr>");
-  id++;
 }
