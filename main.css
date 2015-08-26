@@ -32,13 +32,18 @@ p {
 	font-size: 14pt;
 }
 
+ul {
+	font-family: 'Copperplate Gothic Light';
+	font-size: 14pt;
+}
+
 input [type=text]:focus {
 	border: solid;
 	outline: dotted;
 	padding: 0 15px;
 }
 
-#add-items {
+#item {
 	text-align: center;
 	width: 300px;
 	padding: 0 15px;
@@ -69,7 +74,6 @@ button {
 
 }
 
-footer {
-	margin-top: 40px; 
-	position: absolute;
+.done {
+	text-decoration: line-through;
 }
