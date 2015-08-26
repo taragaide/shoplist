@@ -1,49 +1,52 @@
-$(document).ready(initializeForm);
+$(document).ready(function(e) {
+  editButton();
 
-function initializeForm() {
+  $("tbody").on("click", ".cross", function() {
+    $(this).closest("tr").remove();
+  });
 
-// initialize the app
-    var itemCount = 0;
-    var itemInput = $("input#item");
-    itemInput.val("");
+  $("button").on("click", getInput);
 
-    // define what happens when we click the "Add Item" link
-    $("a#add-item").click(shoppingList);
-    $("#item").keydown(function (enter) {
-        if (enter.keyCode == 13) {
-            shoppingList();}
-    });
+  $("tbody").on("click", ".box", function() {
+    $(this).closest("tr").find("span").toggleClass("checked");
 
-    function shoppingList() {
-        if (itemInput.val() === '') {
-            return;
-        }
-        // get the items list and item to add
-        var items = $("ul#items");
-        var itemToBuy = itemInput.val();
-        itemInput.val("");
+  });
+});
 
-        // create a list item and checkbox, assigning an id to it.
-        var listItem = $("<li><input type='checkbox' name=" + itemToBuy + " value=" + itemToBuy + "> " + itemToBuy + " <a class='delete' href='#'><strong>-</strong> Delete</a></li>");
-        listItem.attr("id", "item[" + itemCount+++"]");
-        addItem(listItem);
+// triggered on Enter
+$(document).on("keydown", function(e) {
+  if(e.keyCode === 13) {
+    getInput();
+  }
+});
 
-        //delete items
-        listItem.find("a").click(function () {
-            $(this).parent().hide('slow', function () {
-                $(this).remove();
-            });
-        });
-
-        // add the item to the list, slide in slowly
-        function addItem(listItem) {
-            listItem.hide();
-            items.append(listItem);
-            listItem.show('slow');
-        }
-    
-        // clear input and refocus
-        itemInput.focus();
-
+// Toggle delete icon when edit button is clicked
+function editButton() {
+  $(".edit").on("click", "span", function() {
+    $(".cross").toggle();
+  });
 }
+
+// input and then calling addItem() with the input
+function getInput() {
+  var custInput = $(".custinput");
+  var input = custInput.val();
+
+  if ((input !== "") && ($.trim(input) !== "")) {
+    addItem(input);
+    custInput.val("");
+  }
+}
+
+//adding item to the list
+
+
+function addItem(message) {
+  $(".cross").hide(); // hiding the delete icon
+  var checkbox = "<td class=\"check\">" + "<input type=\"checkbox\" id=\"item" + id + "\" class=\"box\">" + "<label for=\"item" + id + "\" class=\"check-label\"></label></td>";
+  var content = "<td class=\"content\"><span>" + message + "</span></td>";
+  var delIcon = "<td><img src=\"img/cross.png\" alt=\"cross\" class=\"cross\"></td>";
+
+  $("tbody").append("<tr>" + checkbox + content + delIcon + "</tr>");
+  id++;
 }
