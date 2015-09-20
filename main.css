@@ -3,23 +3,12 @@ body {
 	background-color: #968B90;
 }
 
-.green-text 
-{
-color: #27d88c;
-
-}
-
-.red-text {
-	color: #D82773;	
-	font-size: 20pt;
-}
-
-
 h1{
 	font-size: 24pt;
 	font-family: Copperplate, 'Copperplate Gothic Light', fantasy;
 	text-transform: uppercase;
 }
+
 
 h2{
 	font-size: 12pt;
@@ -27,53 +16,7 @@ h2{
 }
 
 
-p {
-	font-family: 'Copperplate Gothic Light';
-	font-size: 14pt;
-}
-
-ul {
-	font-family: 'Copperplate Gothic Light';
-	font-size: 14pt;
-}
-
-input [type=text]:focus {
-	border: solid;
-	outline: dotted;
-	padding: 0 15px;
-}
-
-#item {
-	text-align: center;
-	width: 300px;
-	padding: 0 15px;
-	margin: 15px auto;
-	line-height: 24pt; 
-	font-size: 12pt;
-	display: inline-block;
-
-}
-
-.list-item {
-	font-family: 'Copperplate Gothic Light';
-	font-size: 12pt;
-	text-align: center;
-	margin: 15px auto; 
-}
-
-button {
-	text-align: center;
-	background-color: #D82773;	
-	font-family: Copperplate, 'Copperplate Gothic Light', fantasy;
-	font-size: 14pt;
-	height: 30px;
-	margin: 15px auto;
-	padding: 0 15px;
-	cursor: pointer;
-	display: inline-block;
-
-}
-
-.done {
-	text-decoration: line-through;
+ul
+{
+    list-style-type: none;
 }

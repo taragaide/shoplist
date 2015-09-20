@@ -1,51 +1,25 @@
-$(document).ready(function(e) {
-  editButton();
+$(document).ready(function(){
+// Validate text box, then add value in text box to list
 
-  $("tbody").on("click", ".cross", function() {
-    $(this).closest("tr").remove();
-  });
+  $('#button').click(function() {
+    if( $('input#checkList').val().trim().length == 0 ) {
+        // alert("put something here");
+        $('input#checkList').val("");
+    } else { 
 
-  $("button").on("click", getInput);
-
-  $("tbody").on("click", ".box", function() {
-    $(this).closest("tr").find("span").toggleClass("checked");
-
-  });
-});
-
-// triggered on Enter
-$(document).on("keydown", function(e) {
-  if(e.keyCode === 13) {
-    getInput();
-  }
-});
-
-// Toggle delete icon when edit button is clicked
-function editButton() {
-  $(".edit").on("click", "span", function() {
-    $(".cross").toggle();
-  });
-}
-
-// input and then calling addItem() with the input
-function getInput() {
-  var custInput = $(".custinput");
-  var input = custInput.val();
-
-  if ((input !== "") && ($.trim(input) !== "")) {
-    addItem(input);
-    custInput.val("");
-  }
-}
-
-//adding item to the list
+    $('ul').append('<li class="todo"><button class="item">Done</button>' + $('input#checkList').val() + '</li>');
+    $('input#checkList').val("");
 
 
-function addItem(message) {
-  $(".cross").hide(); // hiding the delete icon
-  var checkbox = "<td class=\"check\">" + "<input type=\"checkbox\" id=\"item" + "\" class=\"box\">" + "<label for=\"item" + "\" class=\"check-label\"></label></td>";
-  var content = "<td class=\"content\"><span>" + message + "</span></td>";
+    };  
   
+  });
 
-  $("tbody").append("<tr>" + checkbox + content + delIcon + "</tr>");
-}
+  // Change class when user clicks Done button  
+
+  $('ul').on('click', '.item', function() {
+    $(this).closest('li').toggleClass('todo done');
+    $(this).remove();
+  });
+
+});

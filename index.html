@@ -1,35 +1,25 @@
-<!doctype <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link href="main.css" type="text/css" rel="stylesheet">
+	<link href="main.css" type="text/css" rel="stylesheet"/>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script type="text/javascript" src="js/function.js">
-	</script>
-	<title>Shopping List App</title>
+	<script type="text/javascript" src="js/function.js"></script>
+	<title>SHopping List App</title>
 </head>
-
 <body>
-	<h1><span class="green-text">Shopping</span> List</h1>
-	<h2>Created by <span class="red-text">T.M.G.</span></h2>
-	<hr>
-		<p>Enter each item in the textbox, then press enter</p>
-	<div class ="input">
-		<input id="item" type="text" class="custinput"
-		placeholder="+ Add Items">
-		<button type="add-list" class="enter">Enter</button>
+	<h1>Shopping List</h1>
+	<h2>Created by BrassCodes</h2>
+	
+	<input type="text" id="checkList"/>
+	<button id="button">Enter!</button>
+	
+	<div id="items">
+	<ul>
+		<li class="" ="todo"></li>
+
+		<li class="done"></li>
+	</ul>
 	</div>
-	<div class="" ="list">
-		<table class="items">
-			<thead>
-			<tr>
-			<th class="edit" colspan="3"></th>
-			</tr>
-			</thead>
-			<tbody></tbody>
-		</table>
-	</div>
-		<hr>
-		<form><reset><button type="reset"/>Reset</reset></form>
 </body>
 </html>
