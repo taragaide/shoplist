@@ -18,8 +18,9 @@ $(document).ready(function(){
   // Change class when user clicks Done button  
 
   $('ul').on('click', '.item', function() {
-    $(this).closest('li').toggleClass('todo done');
-    $(this).remove();
+    //$(this).closest('li').toggleClass('todo done');
+    //$(this).remove();
+    this.parentElement.remove();
   });
 
 });
