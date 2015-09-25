@@ -1,10 +1,15 @@
-$(document).ready(function(){
+// $(document).ready(function(){
 // Validate text box, then add value in text box to list
-
-  $('#button').click(function() {
-    if( $('input#checkList').val().trim().length == 0 ) {
+document.onload(){
+  // $('#button').click(function() {
+    document.getElementById('button').onclick(){
+      var checkList = document.getElementById('checkList');
+    // if( $('input#checkList').val().trim().length === 0 ) {
+      if(checkList === '')
+      alert("Please enter something");
+    
         // alert("put something here");
-        $('input#checkList').val("");
+        // $('input#checkList').val("");
     } else { 
 
     $('ul').append('<li class="todo"><button class="item">Done</button>' + $('input#checkList').val() + '</li>');
